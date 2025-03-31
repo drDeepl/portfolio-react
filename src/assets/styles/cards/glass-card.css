@@ -1,0 +1,183 @@
+﻿/* GlassCard.css */
+.glass-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+
+  pointer-events: none;
+  z-index: 60;
+  perspective: 1200px;
+}
+
+.glass-card {
+  /* Базовые стили перенесены в inline-стили для динамического изменения */
+  pointer-events: all;
+  position: absolute;
+  z-index: 1000;
+  overflow: hidden;
+  /* Улучшенный эффект стекла */
+  box-shadow:
+    0 8px 32px rgba(31, 38, 135, 0.37),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+
+  /* Интересные дополнения */
+  transition: box-shadow 0.3s ease;
+}
+
+.glass-card:active {
+  cursor: grabbing;
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.glass-card h2 {
+  margin: 0 0 5px 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(45deg, #ffffff, #f0f0f0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* color: transparent; */
+}
+
+.glass-card p {
+  /* margin: 0 0 20px; */
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.card-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(5px);
+}
+
+.card-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.instruction {
+  position: absolute;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  font-size: 1.2rem;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-decoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  z-index: 1;
+  pointer-events: all;
+}
+
+.card-decoration-1 {
+  width: 150px;
+  height: 150px;
+  top: -30px;
+  left: -30px;
+  animation: float 15s infinite ease-in-out;
+  pointer-events: all;
+}
+
+.card-decoration-2 {
+  width: 120px;
+  height: 120px;
+  bottom: -20px;
+  right: -20px;
+  animation: float 12s infinite ease-in-out reverse;
+  pointer-events: all;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(10px, 10px) scale(1.1);
+  }
+  50% {
+    transform: translate(5px, -5px) scale(0.95);
+  }
+  75% {
+    transform: translate(-7px, 7px) scale(1.05);
+  }
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .glass-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .glass-card p {
+    font-size: 0.9rem;
+  }
+
+  .instruction {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+.instruction-wave {
+  position: absolute;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 12px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.5),
+    rgba(59, 130, 246, 0.5)
+  );
+  backdrop-filter: blur(5px);
+  animation: pulsate 2s infinite ease-in-out;
+  z-index: 10;
+}
