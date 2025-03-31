@@ -1,1 +1,98 @@
 @import 'tailwindcss';
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+  padding: 0 20px;
+}
+
+.loading-title {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.counter-container {
+  height: 70px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #00c9ff;
+}
+
+.progress-bar-container {
+  width: min(80%, 400px);
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 201, 255, 0.5);
+}
+
+.loading-message {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: white;
+  color: #121212;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.content p {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .loading-title {
+    font-size: 2rem;
+  }
+
+  .counter {
+    font-size: 2.8rem;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 1.2rem;
+  }
+}
