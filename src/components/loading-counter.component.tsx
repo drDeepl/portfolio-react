@@ -64,7 +64,7 @@ const LoadingCounter: React.FC<LoadingCounterProps> = ({
             variants={titleVariants}
             initial="hidden"
             animate="visible"
-            className="loading-title"
+            className="loading-title font-new-mexika"
           >
             Загрузка страницы
           </motion.h1>
@@ -112,8 +112,9 @@ const LoadingCounter: React.FC<LoadingCounterProps> = ({
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
+            className="font-new-mexika"
           >
-            Страница загружена!
+            Страница загружена! VLIMO
           </motion.h1>
           <motion.p
             initial={{ y: 30, opacity: 0 }}

@@ -10,10 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/cannon": "^6.6.0",
+    "@react-three/drei": "^10.0.6",
+    "@react-three/fiber": "^9.1.2",
+    "@react-three/postprocessing": "^3.0.4",
     "@tailwindcss/vite": "^4.0.17",
     "framer-motion": "^12.6.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "postprocessing": "^6.37.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "three": "^0.175.0",
+    "three-stdlib": "^2.35.15"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

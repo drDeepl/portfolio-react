@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'new-mexika';
+  src: url('assets/fonts/New_Mexika.ttf') format('ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+
 .loading-container {
   display: flex;
   flex-direction: column;
