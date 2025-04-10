@@ -11,6 +11,7 @@ import {
   OrbitControls,
   useTexture,
   PerspectiveCamera,
+  Text,
 } from '@react-three/drei';
 import {
   EffectComposer,
@@ -112,7 +113,7 @@ const GlassShard = ({ position, rotation, size, velocity, index }) => {
       color: new THREE.Color(0xffffff),
       metalness: 0.1,
       roughness: 0.05 + Math.random() * 0.03, // Легкая вариация шероховатости
-      transmission: 0.92, // Прозрачность
+      transmission: 0.95, // Прозрачность
       thickness: 0.5, // Толщина для преломления
       envMapIntensity: 1,
       clearcoat: 1,
@@ -121,7 +122,12 @@ const GlassShard = ({ position, rotation, size, velocity, index }) => {
       specularIntensity: 1,
       specularColor: new THREE.Color(0xffffff),
       reflectivity: 0.5,
-      // Добавляем легкий цветовой оттенок для разнообразия
+      transparent: true,
+      // Устанавливаем opacity в 1, чтобы не смешивать обычный альфа-канал с transmission
+      opacity: 1,
+      // Отключаем запись в буфер глубины для предотвращения артефактов сортировки
+      depthWrite: false,
+      // Дополнительные параметры для легкого цветового оттенка (опционально)
       attenuationColor: new THREE.Color(0xfafeff),
       attenuationDistance: 5 + Math.random() * 5,
     });
@@ -259,9 +265,23 @@ const GlassScene = () => {
           <BrokenGlass count={15} />
         </Physics>
 
+        {/* Текст, расположенный позади стеклянных осколков */}
+        <Text
+          position={[0, 0, -1]}
+          fontSize={0.5}
+          color="white"
+          maxWidth={4}
+          lineHeight={1}
+          letterSpacing={0.15}
+          textAlign="center"
+          anchorX="center"
+          anchorY="middle"
+        >
+          FULLSTACK DEVELOPER
+        </Text>
+
         <Environment preset="apartment" />
       </Suspense>
-      {/* <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} /> */}
 
       <EffectComposer>
         <Bloom
